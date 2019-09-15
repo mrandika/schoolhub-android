@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/null_presence"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/image_warning_presence"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_warning_red_64dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_warning_presence"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/sfuimedium"
+                android:text="Kamu belum absen!"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_warning_presence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_warning_presence"
+                app:layout_constraintTop_toTopOf="@+id/image_warning_presence" />
+
+            <TextView
+                android:id="@+id/placeholder_warning_presence"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sfuimedium"
+                android:text="Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_warning_presence"
+                app:layout_constraintTop_toBottomOf="@+id/text_warning_presence" />
+
+            <Button
+                android:id="@+id/btn_absen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Absen"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/placeholder_warning_presence"
+                app:layout_constraintTop_toBottomOf="@+id/placeholder_warning_presence" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/available_presence"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/image_presence"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_check_circle_green_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/text_presence"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/sfuimedium"
+                android:text="Kamu sudah absen!"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image_presence"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image_presence"
+                app:layout_constraintTop_toTopOf="@+id/image_presence" />
+
+            <TextView
+                android:id="@+id/placeholder_presence"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sfuimedium"
+                android:text="Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet, Lorem dorem ipsum dolor sit amet."
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/text_presence"
+                app:layout_constraintTop_toBottomOf="@+id/text_presence" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

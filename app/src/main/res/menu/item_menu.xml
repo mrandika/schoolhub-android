@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/item_today"
+        android:icon="@drawable/ic_today_black_24dp"
+        android:title="Today" />
+    <item
+        android:id="@+id/item_canteen"
+        android:checkable="false"
+        android:checked="false"
+        android:icon="@drawable/ic_canteen_black_24dp"
+        android:title="Canteen" />
+</menu>
