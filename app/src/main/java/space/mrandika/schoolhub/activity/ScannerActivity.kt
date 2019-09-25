@@ -8,27 +8,19 @@ import android.content.pm.PackageManager
 import android.media.RingtoneManager
 import android.os.Build
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView
+import space.mrandika.schoolhub.fragment.PresenceBottomSheet
 import space.mrandika.schoolhub.logic.Presence.PresencePresenter
 import space.mrandika.schoolhub.logic.Presence.PresenceView
 import space.mrandika.schoolhub.network.Api
 
-class ScannerActivity : Activity(), ZXingScannerView.ResultHandler, PresenceView {
+class ScannerActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
     private lateinit var mScannerView: ZXingScannerView
     private val camAccessCode = 100
-
-    private lateinit var presencePresenter: PresencePresenter
-
-    override fun showLoading() {
-        //
-    }
-
-    override fun hideLoading() {
-        //
-    }
 
     override fun onBackPressed() {
         super.onBackPressed()
@@ -74,11 +66,17 @@ class ScannerActivity : Activity(), ZXingScannerView.ResultHandler, PresenceView
         val resultText = result.toString()
 
         if (resultText.contains("PRS=")) {
-            val code = resultText.replace("PRS=", "")
-            val sharedPreference = this.getSharedPreferences("token", Context.MODE_PRIVATE)
-            val token = sharedPreference.getString("token", null)
-            presencePresenter = PresencePresenter(this, this, Api)
-            presencePresenter.postPresence(token, code)
+            val bundle = Bundle()
+            bundle.putString("code", resultText)
+            val bottomNavDrawerFragment = PresenceBottomSheet()
+            bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+            bottomNavDrawerFragment.arguments = bundle
+        } else if (resultText.contains("SRP=")) {
+            val bundle = Bundle()
+            bundle.putString("code", resultText)
+            val bottomNavDrawerFragment = PresenceBottomSheet()
+            bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+            bottomNavDrawerFragment.arguments = bundle
         }
     }
 }

@@ -28,7 +28,7 @@ class TodayPresenter(
                     Log.i("RSLT", result.toString())
 
                     val status = response.statusCode
-                    if (status == 200) {
+                    if (status == 200 && !result.toString().contains("Token")) {
                         val json = result.get()
                         val responseJson = gson.fromJson(json, Today::class.java)
 

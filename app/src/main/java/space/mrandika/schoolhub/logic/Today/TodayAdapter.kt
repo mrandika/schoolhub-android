@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import org.jetbrains.anko.find
@@ -32,6 +33,8 @@ class TodayAdapter(private val today: List<TodayResponse>):
         private val null_presence: CardView = view.find(R.id.null_presence)
         private val available_presence: CardView = view.find(R.id.available_presence)
 
+        private val balance_text: TextView = view.find(R.id.text_balance)
+
         fun bindItem(today: TodayResponse) {
             if (today.is_presenced == 0) {
                 val btnAbsen: Button = itemView.find(R.id.btn_absen)
@@ -42,6 +45,8 @@ class TodayAdapter(private val today: List<TodayResponse>):
             } else {
                 available_presence.visibility = View.VISIBLE
             }
+
+            balance_text.text = today.balance.toString()
         }
     }
 }

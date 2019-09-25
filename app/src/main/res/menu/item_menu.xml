@@ -6,9 +6,11 @@
         android:icon="@drawable/ic_today_black_24dp"
         android:title="Today" />
     <item
-        android:id="@+id/item_canteen"
-        android:checkable="false"
-        android:checked="false"
-        android:icon="@drawable/ic_canteen_black_24dp"
-        android:title="Canteen" />
+        android:id="@+id/item_subject"
+        android:icon="@drawable/ic_book_black_24dp"
+        android:title="Subject" />
+    <item
+        android:id="@+id/item_camera"
+        android:icon="@drawable/ic_camera_alt_black_24dp"
+        android:title="Camera" />
 </menu>

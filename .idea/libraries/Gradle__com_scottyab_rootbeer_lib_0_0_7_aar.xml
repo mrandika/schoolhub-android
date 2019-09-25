@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Gradle: com.scottyab:rootbeer-lib:0.0.7@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d63e91e9bf5677b5d3ff4c82d01570ef/rootbeer-lib-0.0.7/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d63e91e9bf5677b5d3ff4c82d01570ef/rootbeer-lib-0.0.7/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scottyab/rootbeer-lib/0.0.7/27f83e5510c691d4c4efe958016384adc559c903/rootbeer-lib-0.0.7-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.scottyab/rootbeer-lib/0.0.7/8c1a92598589489c54630691eb544c6ac1c47db/rootbeer-lib-0.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

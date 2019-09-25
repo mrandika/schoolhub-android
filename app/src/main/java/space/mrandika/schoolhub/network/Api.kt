@@ -13,11 +13,15 @@ object Api {
         return API_URL+"user"
     }
 
+    fun today(): String {
+        return  API_URL+"today"
+    }
+
     fun presence(): String {
         return API_URL+"presence"
     }
 
-    fun today(): String {
-        return  API_URL+"today"
-    }
+//    fun borrow(): String {
+//
+//    }
 }

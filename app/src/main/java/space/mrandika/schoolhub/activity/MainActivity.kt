@@ -2,18 +2,21 @@ package space.mrandika.schoolhub.activity
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import space.mrandika.schoolhub.R
 import space.mrandika.schoolhub.activity.Auth.LoginActivity
+import space.mrandika.schoolhub.fragment.SubjectFragment
 import space.mrandika.schoolhub.fragment.TodayFragment
 import space.mrandika.schoolhub.logic.Token.TokenPresenter
 import kotlin.system.exitProcess
 
-class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var presenter: TokenPresenter
 
@@ -39,6 +42,30 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         presenter.getTokenStatus()
 
         loadFragment(TodayFragment())
+
+        bottomNavigationView.setOnNavigationItemSelectedListener {menuItem ->
+            var fragment: Fragment?
+            var status: Boolean? = null
+
+            Log.i("MENU", menuItem.itemId.toString())
+
+            when (menuItem.itemId) {
+                R.id.item_today -> {
+                    fragment = TodayFragment()
+                    status = loadFragment(fragment)
+                }
+                R.id.item_subject -> {
+                    fragment = SubjectFragment()
+                    status = loadFragment(fragment)
+                }
+                R.id.item_camera -> {
+                    startActivity<ScannerActivity>()
+                    status = true
+                }
+            }
+
+            status!!
+        }
     }
 
     private fun loadFragment(fragment: Fragment?): Boolean {
@@ -52,13 +79,5 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         return false
     }
 
-    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
-        var fragment: Fragment? = null
 
-        when (menuItem.itemId) {
-            R.id.item_today -> fragment = TodayFragment()
-        }
-
-        return loadFragment(fragment)
-    }
 }
