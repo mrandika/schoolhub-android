@@ -13,4 +13,12 @@
         android:id="@+id/item_camera"
         android:icon="@drawable/ic_camera_alt_black_24dp"
         android:title="Camera" />
+    <item
+        android:id="@+id/item_news"
+        android:icon="@drawable/ic_news_black_24dp"
+        android:title="News" />
+    <item
+        android:id="@+id/item_account"
+        android:icon="@drawable/ic_account_circle_black_24dp"
+        android:title="Account" />
 </menu>

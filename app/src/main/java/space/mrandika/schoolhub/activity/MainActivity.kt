@@ -11,6 +11,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.startActivity
 import space.mrandika.schoolhub.R
 import space.mrandika.schoolhub.activity.Auth.LoginActivity
+import space.mrandika.schoolhub.fragment.AccountFragment
+import space.mrandika.schoolhub.fragment.NewsFragment
 import space.mrandika.schoolhub.fragment.SubjectFragment
 import space.mrandika.schoolhub.fragment.TodayFragment
 import space.mrandika.schoolhub.logic.Token.TokenPresenter
@@ -47,8 +49,6 @@ class MainActivity : AppCompatActivity() {
             var fragment: Fragment?
             var status: Boolean? = null
 
-            Log.i("MENU", menuItem.itemId.toString())
-
             when (menuItem.itemId) {
                 R.id.item_today -> {
                     fragment = TodayFragment()
@@ -61,6 +61,14 @@ class MainActivity : AppCompatActivity() {
                 R.id.item_camera -> {
                     startActivity<ScannerActivity>()
                     status = true
+                }
+                R.id.item_news -> {
+                    fragment = NewsFragment()
+                    status = loadFragment(fragment)
+                }
+                R.id.item_account -> {
+                    fragment = AccountFragment()
+                    status = loadFragment(fragment)
                 }
             }
 

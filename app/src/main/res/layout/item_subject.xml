@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView
+                android:id="@+id/subject_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guru"
+                android:textSize="24sp"
+                android:fontFamily="@font/sfuibold"/>
+            <TextView
+                android:id="@+id/subject_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Subject"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/sfuimedium"/>
+            <TextView
+                android:id="@+id/subject_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="07:00 - 08:00"
+                android:textSize="14sp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/sfuimedium"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

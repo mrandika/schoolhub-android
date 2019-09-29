@@ -21,7 +21,23 @@ object Api {
         return API_URL+"presence"
     }
 
-//    fun borrow(): String {
-//
-//    }
+    fun borrow(id: String): String {
+        return API_URL+"sarpras/borrow?id=$id"
+    }
+
+    fun payment(id: String): String {
+        return API_URL+"payment?id=$id"
+    }
+
+    fun grade(): String {
+        return API_URL+"grade"
+    }
+
+    fun teaching(): String {
+        return API_URL+"teaching"
+    }
+
+    fun allpost(): String {
+        return API_URL+"post"
+    }
 }

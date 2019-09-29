@@ -44,10 +44,8 @@ class PresenceBottomSheet : BottomSheetDialogFragment(), PresenceView {
         presence_confirmation.onSlideCompleteListener = object: SlideToActView.OnSlideCompleteListener {
             override fun onSlideComplete(view: SlideToActView) {
                 val code = arguments?.getString("code")?.replace("PRS=", "")
-                val sharedPreference = activity?.getSharedPreferences("token", Context.MODE_PRIVATE)
-                val token = sharedPreference?.getString("token", null)
                 presencePresenter = PresencePresenter(context!!, this@PresenceBottomSheet, Api)
-                presencePresenter.postPresence(token!!, code!!)
+                presencePresenter.postPresence(code!!)
             }
         }
 

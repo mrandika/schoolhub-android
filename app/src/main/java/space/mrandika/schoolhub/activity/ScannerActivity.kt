@@ -13,7 +13,9 @@ import androidx.core.app.ActivityCompat
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.Result
 import me.dm7.barcodescanner.zxing.ZXingScannerView
+import space.mrandika.schoolhub.fragment.PaymentBottomSheet
 import space.mrandika.schoolhub.fragment.PresenceBottomSheet
+import space.mrandika.schoolhub.fragment.SarprasBorrowBottomSheet
 import space.mrandika.schoolhub.logic.Presence.PresencePresenter
 import space.mrandika.schoolhub.logic.Presence.PresenceView
 import space.mrandika.schoolhub.network.Api
@@ -74,7 +76,13 @@ class ScannerActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
         } else if (resultText.contains("SRP=")) {
             val bundle = Bundle()
             bundle.putString("code", resultText)
-            val bottomNavDrawerFragment = PresenceBottomSheet()
+            val bottomNavDrawerFragment = SarprasBorrowBottomSheet()
+            bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
+            bottomNavDrawerFragment.arguments = bundle
+        } else if (resultText.contains("KTN=")) {
+            val bundle = Bundle()
+            bundle.putString("code", resultText)
+            val bottomNavDrawerFragment = PaymentBottomSheet()
             bottomNavDrawerFragment.show(supportFragmentManager, bottomNavDrawerFragment.tag)
             bottomNavDrawerFragment.arguments = bundle
         }

@@ -14,9 +14,11 @@ class PresencePresenter(
     private val view: PresenceView,
     private val api: Api
 ) {
-    fun postPresence(token: String, attendance: String) {
+    fun postPresence(attendance: String) {
         view.showLoading()
         doAsync {
+            val sharedPreference = context.getSharedPreferences("token", Context.MODE_PRIVATE)
+            val token = sharedPreference.getString("token", null)
             Fuel.post(api.presence())
                 .header("Authorization" to "Bearer $token")
                 .body("id_attendance=$attendance&status=Hadir")
