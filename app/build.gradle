@@ -15,7 +15,7 @@ android {
         versionName "0.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "API_URL", "\"http://172.20.10.2:8888/api/\""
+        buildConfigField "String", "API_URL", "\"https://schoolhub.mrandika.space/api/\""
         buildConfigField "String", "PPK_SecureWallet", "\"WALLET-ALPHA_001\""
     }
     buildTypes {

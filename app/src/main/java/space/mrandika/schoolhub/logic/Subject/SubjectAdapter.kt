@@ -30,8 +30,8 @@ class SubjectAdapter(private val subject: List<SubjectResponse>):
 
         fun bindItem(subject: SubjectResponse) {
             subject_teacher.text = subject.teacher
-            subject_title.text = subject.subject
-            subject_time.text = "${subject.time_in} - ${subject.time_out}"
+            subject_title.text = "${subject.subject}"
+            subject_time.text = "${subject.room_name}, ${subject.time_in} - ${subject.time_out}"
         }
     }
 }
